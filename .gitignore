@@ -1,5 +1,6 @@
 #tmux
 tmux*
+.vscode/
 # Prerequisites
 *.d
 
