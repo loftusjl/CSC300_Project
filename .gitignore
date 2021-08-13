@@ -33,3 +33,7 @@ tmux*
 *.out
 *.app
 ~$oject-Template-Week_1.docx
+.vscode/launch.json
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/.easycpp
