@@ -1,11 +1,13 @@
-#include<iostream>
+#include "Entity.cpp"
 #include<string>
 using namespace std;
 #ifndef PLAYER_H
 #define PLAYER_H
-class Player
+
+class Player: public Entity
 {
 public:
+    Player();
     Player(string name);
     string getPlayerName() const;
     void setPlayerName(string);
@@ -14,6 +16,10 @@ private:
 };
 #endif
 
+Player::Player()
+{
+    playerName = "";
+}
 Player::Player(string name)
 {
     setPlayerName(name);
