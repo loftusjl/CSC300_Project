@@ -1,3 +1,5 @@
+#include "RandRange.cpp"
+
 using namespace std;
 #ifndef ENTITY_H
 #define ENTITY_H
@@ -8,12 +10,19 @@ public:
     Entity();
     int getHitPoints() const;
     void setHitPoints(int);
+    int getStrength() const;
+    void setStrength(int);
+    int getIntelligence();
+    void setIntelligence(int);
+    int getDexterity();
+    void setDexterity(int);
     int getBaseAttackBonus() const;
     void setBaseAttackBonus(int);
     int getBaseEvasion() const;
     void setBaseEvasion(int);
-    int getBaseDefenseEvasion() const;
-    void setBaseDefenseEvasion(int);
+    int getBaseDefenseBonus() const;
+    void setBaseDefenseBonus(int);
+
 private:
     int hitPoints;
     int strength;
@@ -30,18 +39,33 @@ private:
 
 Entity::Entity()
 {
-    int hitPoints = 0;
-    int strength = 0;
-    int intelligence = 0;
-    int dexterity = 0;
-    int baseAttackBonus = 0;
-    int baseEvasion = 0;
-    int baseDefenseBonus = 0;
+    RandRange rand = RandRange(1, 18);
+
+    setHitPoints(rand.RandResult());
+    setStrength(rand.RandResult());
+    setIntelligence(rand.RandResult());
+    setDexterity(rand.RandResult());
+    setBaseAttackBonus(rand.RandResult());
+    setBaseEvasion(rand.RandResult());
+    setBaseDefenseBonus(rand.RandResult());
 }
 int Entity::getHitPoints() const
 {
     return hitPoints;
 }
+int Entity::getStrength() const
+{
+    return strength;
+}
+int Entity::getIntelligence()
+{
+    return intelligence;
+}
+int Entity::getDexterity()
+{
+    return dexterity;
+}
+
 int Entity::getBaseAttackBonus() const
 {
     return baseAttackBonus;
@@ -50,7 +74,7 @@ int Entity::getBaseEvasion() const
 {
     return baseEvasion;
 }
-int Entity::getBaseDefenseEvasion() const
+int Entity::getBaseDefenseBonus() const
 {
     return baseDefenseBonus;
 }
@@ -62,11 +86,23 @@ void Entity::setHitPoints(int hit)
 {
     hitPoints = hit;
 }
+void Entity::setStrength(int str)
+{
+    strength = str;
+}
+void Entity::setIntelligence(int intel)
+{
+    intelligence = intel;
+}
+void Entity::setDexterity(int dex)
+{
+    dexterity = dex;
+}
 void Entity::setBaseEvasion(int evasion)
 {
     baseEvasion = evasion;
 }
-void Entity::setBaseDefenseEvasion(int defense)
+void Entity::setBaseDefenseBonus(int defense)
 {
     baseDefenseBonus = defense;
 }

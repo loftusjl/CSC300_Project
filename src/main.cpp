@@ -1,8 +1,12 @@
+#include "Entity.cpp"
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!!" << std::endl;
-    cout << "Git commit" << endl;
+
+    Entity player;
+
+    std::cout << "Starting Stats:\n HP: " << player.getHitPoints() << "\nBAB: " << player.getBaseAttackBonus() << std::endl;
+    cout << endl;
 }
