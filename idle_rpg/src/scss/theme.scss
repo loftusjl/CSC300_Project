@@ -6,6 +6,7 @@ body {
 	}
 
 	.inner{
+		min-height: 95%;
 		min-width: 720px;
 		max-width: 900px;
 		margin: 20px auto 0 auto;
@@ -19,11 +20,16 @@ body {
 				flex:1;
 				flex-direction: column;
 				padding:10px;
-				justify-content: center;
+				justify-content: flex-start;
 
-				&.motd{
-					align-items: center;
-					justify-content: unset;
+				.motd{
+					text-align: center;
+				}
+				.rpgui-container{
+					line-height: 1.5;
+					text-align: left;
+					position: unset;
+					height: 100%;
 				}
 
 				.rpgui-button{
@@ -33,5 +39,9 @@ body {
 			}
 		}
 
+		.control-row{
+			display: flex;
+			margin: 10px auto;
+		}
 	}
 }

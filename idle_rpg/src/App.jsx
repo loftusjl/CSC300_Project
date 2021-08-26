@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import SelectMenu from './pages/SelectMenu'
+import { TravelScreen } from './pages/TravelScreen'
 import Layout from './Layout'
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
         <Router>
           <Switch>
             <Route exact path='/' component={SelectMenu} />
-
+            <Route exact path='/Travel' component={TravelScreen} />
           </Switch>
         </Router>
       </Layout>
