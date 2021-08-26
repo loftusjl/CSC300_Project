@@ -3,11 +3,13 @@ import { createContext } from "react";
 export const SiteContext = createContext({
 	characterName: '',
 	characterHP: 0,
+	characterMaxHP: 100,
 	characterAttackBonus: 0,
 	characterEvasionBonus: 0,
 	characterDefenseBonus: 0,
 	enemyName: '',
 	enemyHP: 0,
+	enemyMaxHP: 100,
 	enemyAttackBonus: 0,
 	enemyEvasionBonus: 0,
 	enemyDefenseBonus: 0,

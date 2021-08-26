@@ -11,6 +11,13 @@ body {
 		max-width: 900px;
 		margin: 20px auto 0 auto;
 		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		.wrapper{
+			flex:2;
+		}
 
 		.select-menu-wrapper{
 			display:flex;

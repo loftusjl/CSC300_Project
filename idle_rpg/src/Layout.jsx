@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { SiteContext } from './context/SiteContext';
+import { CharacterStats } from './components/characterStats'
 
 const Layout = (props) => {
 	const [characterName, setCharacterName] = useState('');
@@ -8,10 +9,12 @@ const Layout = (props) => {
 		<SiteContext.Provider value={{ characterName, setCharacterName }}>
 			<div className="rpgui-content">
 				<div className='inner rpgui-container framed'>
-					<h1 className='title'>Idle RPG!</h1>
-					<h3>The text-based RPG of the future is now!</h3>
-
+					<div>
+						<h1 className='title'>Idle RPG!</h1>
+						<h3>The text-based RPG of the future is now!</h3>
+					</div>
 					<div className='wrapper'>{props.children}</div>
+					<CharacterStats />
 				</div>
 			</div>
 		</SiteContext.Provider>
