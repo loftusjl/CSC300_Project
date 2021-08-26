@@ -1,46 +1,8 @@
-#include "RandRange.cpp"
-
-using namespace std;
-#ifndef ENTITY_H
-#define ENTITY_H
-
-class Entity
-{
-public:
-    Entity();
-    int getHitPoints() const;
-    void setHitPoints(int);
-    int getStrength() const;
-    void setStrength(int);
-    int getIntelligence();
-    void setIntelligence(int);
-    int getDexterity();
-    void setDexterity(int);
-    int getBaseAttackBonus() const;
-    void setBaseAttackBonus(int);
-    int getBaseEvasion() const;
-    void setBaseEvasion(int);
-    int getBaseDefenseBonus() const;
-    void setBaseDefenseBonus(int);
-
-private:
-    int hitPoints;
-    int strength;
-    int intelligence;
-    int dexterity;
-    int baseAttackBonus;
-    int baseEvasion;
-    int baseDefenseBonus;
-    //Spell spell[];
-    //Ability ability[];
-};
-
-#endif
-
+#include"Entity.h"
 Entity::Entity()
 {
     RandRange rand = RandRange(1, 18);
-
+    setHealth(100);
     setHitPoints(rand.RandResult());
     setStrength(rand.RandResult());
     setIntelligence(rand.RandResult());
@@ -48,6 +10,14 @@ Entity::Entity()
     setBaseAttackBonus(rand.RandResult());
     setBaseEvasion(rand.RandResult());
     setBaseDefenseBonus(rand.RandResult());
+}
+int Entity::getHealth() const
+{
+    return health;
+}
+void Entity::setHealth(int newHealth)
+{
+    health = newHealth;
 }
 int Entity::getHitPoints() const
 {
@@ -65,7 +35,6 @@ int Entity::getDexterity()
 {
     return dexterity;
 }
-
 int Entity::getBaseAttackBonus() const
 {
     return baseAttackBonus;
@@ -105,4 +74,14 @@ void Entity::setBaseEvasion(int evasion)
 void Entity::setBaseDefenseBonus(int defense)
 {
     baseDefenseBonus = defense;
+}
+void Entity::displayStats()
+{
+    cout<<"\nHit Points: "<<getHitPoints()
+    <<"\nStrength: "<<getStrength()
+    <<"\nIntelligence: "<<getIntelligence()
+    <<"\nDexterity: "<<getDexterity()
+    <<"\nBase Attack Bonus: "<<getBaseAttackBonus()
+    <<"\nBase Defense Bonus: "<<getBaseDefenseBonus()
+    <<"\nBase Evasion: "<<getBaseEvasion()<<endl;
 }
