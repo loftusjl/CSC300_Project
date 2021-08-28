@@ -1,11 +1,14 @@
-import React, { useContext, useState } from 'react'
-import { NavLink } from 'react-router-dom';
+import React, { useContext, useState, useEffect } from 'react'
 import { Button } from '../components/Button/Button'
 import { SiteContext } from '../context/SiteContext';
 
 export function SelectMenu(props) {
-	const { characterName, setCharacterName } = useContext(SiteContext);
+	const { characterName, setCharacterName, setEnemyName } = useContext(SiteContext);
 	const [createCharacter, setCreateCharacter] = useState(false);
+
+	useEffect(() => {
+		setEnemyName('');
+	}, [])
 
 	const handleChange = (e) => {
 		setCharacterName(e.target.value)
@@ -13,12 +16,12 @@ export function SelectMenu(props) {
 	return (
 		<div className='select-menu-wrapper'>
 			<div className='select-menu'>
-				<Button disabled={!characterName.length > 0} to='/Travel'><p>Continue Game</p></Button>
-				<Button
+				<Button color='golden' disabled={!characterName.length > 0} to='/Travel'><p>Continue Game</p></Button>
+				<Button color='golden'
 					onClick={() => setCreateCharacter(!createCharacter)}
 				><p>Create New Character</p></Button>
-				<Button disabled><p>Item Shop</p></Button>
-				<Button disabled><p>Settings</p></Button>
+				<Button color='golden' disabled><p>Item Shop</p></Button>
+				<Button color='golden' disabled><p>Settings</p></Button>
 				<Button><p>Exit Game</p></Button>
 			</div>
 			<div className='select-menu'>

@@ -56,7 +56,8 @@ const Layout = (props) => {
 						<h1 className='title'>Idle RPG!</h1>
 						<h3>The text-based RPG of the future is now!</h3>
 					</div>
-					<div className='wrapper'>{props.children}</div>
+					<div className='wrapper'>
+						{props.children}</div>
 					<div className='status-block'>
 						{characterName && <CharacterStats />}
 						{enemyName && <EnemyStats />}
