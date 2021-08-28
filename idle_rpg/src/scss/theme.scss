@@ -17,6 +17,12 @@ body {
 
 		.wrapper{
 			flex:2;
+			margin: 0 auto;
+			min-width: inherit;
+			
+			p{
+				max-width: 535px;
+			}
 		}
 
 		.select-menu-wrapper{
@@ -43,6 +49,29 @@ body {
 					width: 100%;
 				}
 
+			}
+		}
+
+		.travel-screen-wrapper {
+			display: flex;
+			gap:25px;
+			justify-content: space-between;
+			margin:0 auto;
+			min-width: 850px;
+			position: unset;
+
+			.controls {
+				display: flex;
+				flex-direction: column;
+				button {
+					width: inherit;
+					min-width: 100%;
+				}
+
+			}
+			.description{
+				flex:1 ;
+				position: unset;
 			}
 		}
 

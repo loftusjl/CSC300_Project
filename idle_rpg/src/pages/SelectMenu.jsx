@@ -20,7 +20,6 @@ export function SelectMenu(props) {
 				<Button disabled><p>Item Shop</p></Button>
 				<Button disabled><p>Settings</p></Button>
 				<Button><p>Exit Game</p></Button>
-
 			</div>
 			<div className='select-menu'>
 				{!createCharacter && (
@@ -28,7 +27,6 @@ export function SelectMenu(props) {
 						<h3>Message of the Day:</h3>
 						<p>There's no fate but what we make for ourselves.</p>
 						<em>-Gandalf probably. I dunno, I never watched Star Trek.</em>
-
 					</div>
 				)}
 				{createCharacter && (

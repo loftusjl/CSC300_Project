@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import SelectMenu from './pages/SelectMenu'
 import { TravelScreen } from './pages/TravelScreen'
 import Layout from './Layout'
+import { CombatScreen } from './pages/CombatScreen'
 
 function App() {
 
@@ -11,8 +12,9 @@ function App() {
       <Layout>
         <Router>
           <Switch>
-            <Route exact path='/' component={SelectMenu} />
             <Route exact path='/Travel' component={TravelScreen} />
+            <Route exact path='/Combat' component={CombatScreen} />
+            <Route exact path='/' component={SelectMenu} />
           </Switch>
         </Router>
       </Layout>
