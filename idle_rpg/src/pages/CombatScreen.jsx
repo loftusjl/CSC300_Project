@@ -1,11 +1,14 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
+import { useHistory } from 'react-router';
 import { AutoPilot } from '../components/AutoPilot';
 import { Button } from '../components/Button/Button'
 import { SiteContext } from '../context/SiteContext'
 import { slime } from '../dialogues/slime'
+import { dialogue } from '../util/randGen';
 
 export const CombatScreen = (props) => {
 	const { setEnemyName, encounterAction, encounterLocation, setEncounterLocation, setEncounterAction } = useContext(SiteContext);
+	const history = useHistory();
 
 	useEffect(() => {
 		setEnemyName('Slime');
@@ -19,13 +22,23 @@ But wait.`
 	return (
 		<div className='travel-screen-wrapper rpgui-container framed-golden'>
 			<div className='controls'>
-				<Button onClick={() => {
-					setEncounterAction('Swing and a miss!')
+				<Button onClick={(e) => {
+					e.preventDefault();
+					setEncounterAction(dialogue(slime.attacked))
+					setTimeout(() => {
+						setEncounterAction(dialogue(slime.attacking))
+					}, 3000);
 				}}><p>Attack</p></Button>
 				<Button disabled><p>Spell</p></Button>
 				<Button disabled><p>Ability</p></Button>
 				<Button disabled><p>Item</p></Button>
-				<Button ><p>Flee</p></Button>
+				<Button onClick={(e) => {
+					e.preventDefault();
+					setEncounterAction(dialogue(slime.evaded));
+					setTimeout(() => {
+						history.push('/Travel');
+					}, 2000);
+				}} ><p>Flee</p></Button>
 				<Button color='golden' to='/'><p>Menu</p></Button>
 
 			</div>
