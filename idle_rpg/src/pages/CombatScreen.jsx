@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import { AutoPilot } from '../components/AutoPilot';
 import { Button } from '../components/Button/Button'
 import { SiteContext } from '../context/SiteContext'
+import { slime } from '../dialogues/slime'
 
 export const CombatScreen = (props) => {
 	const { setEnemyName, encounterAction, encounterLocation, setEncounterLocation, setEncounterAction } = useContext(SiteContext);
@@ -11,10 +12,9 @@ export const CombatScreen = (props) => {
 		setEncounterLocation(`
 The Fluffy fields?!?! 
 How dangerous could that possibly be? 
-But wait. 
-A wild slime pulsates from a 
-nearby bush and blocks your path!`
-		)
+But wait.`
+		);
+		setEncounterAction(slime.appears);
 	}, [])
 	return (
 		<div className='travel-screen-wrapper rpgui-container framed-golden'>

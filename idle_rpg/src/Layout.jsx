@@ -10,14 +10,15 @@ const Layout = (props) => {
 	const [characterHP, setCharacterHP] = useState(0);
 	const [characterMaxHP, setCharacterMaxHP] = useState(0);
 	const [characterName, setCharacterName] = useState('');
-	const [encounterLocation, setEncounterLocation] = useState('');
 	const [encounterAction, setEncounterAction] = useState('');
+	const [encounterLocation, setEncounterLocation] = useState('');
 	const [enemyAttackBonus, setEnemyAttackBonus] = useState(0);
 	const [enemyDefenseBonus, setEnemyDefenseBonus] = useState(0);
 	const [enemyEvasionBonus, setEnemyEvasionBonus] = useState(0);
 	const [enemyHP, setEnemyHP] = useState(0);
 	const [enemyMaxHP, setEnemyMaxHP] = useState(0);
 	const [enemyName, setEnemyName] = useState('');
+	const [toggleAutopilot, setToggleAutopilot] = useState(false);
 
 	return (
 		<SiteContext.Provider value={{
@@ -27,8 +28,8 @@ const Layout = (props) => {
 			characterHP,
 			characterMaxHP,
 			characterName,
-			encounterLocation,
 			encounterAction,
+			encounterLocation,
 			enemyAttackBonus,
 			enemyDefenseBonus,
 			enemyEvasionBonus,
@@ -41,14 +42,16 @@ const Layout = (props) => {
 			setCharacterHP,
 			setCharacterMaxHP,
 			setCharacterName,
-			setEncounterLocation,
 			setEncounterAction,
+			setEncounterLocation,
 			setEnemyAttackBonus,
 			setEnemyDefenseBonus,
 			setEnemyEvasionBonus,
 			setEnemyHP,
 			setEnemyMaxHP,
 			setEnemyName,
+			setToggleAutopilot,
+			toggleAutopilot,
 		}}>
 			<div className="rpgui-content">
 				<div className='inner rpgui-container framed'>
