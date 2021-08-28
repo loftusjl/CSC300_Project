@@ -1,12 +1,19 @@
-#include "Entity.cpp"
 #include <iostream>
+#include"GameController.h"
+#include"SelectMenu.h"
+#include"TravelScreen.h"
+#include"CombatScreen.h"
+#include"Entity.h"
+#include"Enemy.h"
+#include"Player.h"
+
+
 using namespace std;
 
 int main()
 {
-
-    Entity player;
-
-    std::cout << "Starting Stats:\n HP: " << player.getHitPoints() << "\nBAB: " << player.getBaseAttackBonus() << std::endl;
-    cout << endl;
+    GameController controller;
+    SelectMenu mainMenu;
+    mainMenu.selectMenu();
+    mainMenu.setSelection(controller.getSelection());
 }
