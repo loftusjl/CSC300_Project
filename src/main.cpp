@@ -14,5 +14,6 @@ int main()
 {
     GameController controller;
     SelectMenu mainMenu;
+    mainMenu.selectMenu();
     mainMenu.setSelection(controller.getSelection());
 }

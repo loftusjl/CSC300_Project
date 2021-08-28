@@ -11,11 +11,12 @@ private:
 public:
 	SelectMenu(/* args */);
 	~SelectMenu() {}
+    static void selectMenu();
 	static void GameMenu();
-	bool ExitGame();
-	Player CreateNewCharacter() const;
+	static bool ExitGame();
+	static Player CreateNewCharacter();
 	void ContinueGame() const;
-	void setSelection(char);
+	static void setSelection(char);
     static void setGameMenu(char);
 	void welcomeMsg() {cout<<"__________Welcome to IDLE RPG_________\n"<<endl;}
 };

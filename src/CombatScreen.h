@@ -14,26 +14,28 @@ private:
 public:
 	CombatScreen();
 	~CombatScreen() {}
+    Enemy getEnemy();
+    Player getPlayer();
+    void setPlayer(Player);
+    void setEnemy(Enemy);
+
     void combatMenu();
-	void DisplayCombatScreen();
+	void displayCombatScreen();
+    void displayCombatOptions();
 
 	int getEntityTurn() const;
 	void setEntityTurn();
-
-	Enemy getEnemy();
-
-    Player getOpposer();
-    void setOpposer(Player);
-    Enemy getOpponent();
-    void setOpponent(Enemy);
 
 	bool Attack(int,int);
 	bool Flee(int,int);
 	void CastSpell();
     void welcomeMsg();
 
-    void displayVSscreen();
-    void attackStatsDisplay();
+    char playerAction();
+    char enemyAction();
+    bool fightResult(char,char);
+    
+
 
 };
 #endif

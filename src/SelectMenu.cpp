@@ -6,6 +6,10 @@
 SelectMenu::SelectMenu() //Menu when first starting game
 {
 	welcomeMsg();
+
+}
+void SelectMenu::selectMenu()
+{
 	cout<<"N for New Game"<<endl;
 	cout<<"C for Continue Game"<<endl;
 	cout<<"E for Exit Game"<<endl;
@@ -23,16 +27,16 @@ void SelectMenu::GameMenu() //Game Menu which shows after character creation or 
 
 bool SelectMenu::ExitGame()
 {
+	bool finalAnswer = false;
 	std::cout << "Are you sure? y/n" << std::endl; //! get user confirmation input
-	// char selection = GameController::getSelection();
-	// if(selection == 'Y'||'y')
-	// 	return true;
-	// else if(selection == 'n'||'N')
-	// 	return false;
-	return true;
+	char choice = GameController::getSelection();
+	if(choice == 'Y'||'y')
+		finalAnswer = true;
+
+	return finalAnswer;
 }
 
-Player SelectMenu::CreateNewCharacter() const //creates a character and passes to game controller as the currentPlayer
+Player SelectMenu::CreateNewCharacter() //creates a character and passes to game controller as the currentPlayer
 {
 	Player player;
 	cout<<"__________Create Your Character__________\n"
@@ -69,9 +73,20 @@ void SelectMenu::setSelection(char userChoice) //Sets the user selection for the
 		break;
 	case 'C':
 		cout<<"Continue Game"<<endl;
+		GameMenu();
+		setGameMenu(GameController::getSelection());
 		break;
 	case 'E':
 		cout<<"Exit Game"<<endl;
+		if(ExitGame())
+		{
+			return;
+		}
+		else 
+		{
+			selectMenu();
+			setSelection(GameController::getSelection());
+		}
 		break;
 	default:
 		cout<<"Error: invalid choice"<<endl;
@@ -94,6 +109,8 @@ void SelectMenu::setGameMenu(char userChoice) //sets the user selection for the 
 		break;
 	case 'M':
 		cout<<"Main Menu"<<endl;
+		selectMenu();
+		setSelection(GameController::getSelection());
 		break;
 	default:
 		cout<<"Error: invalid choice"<<endl;
