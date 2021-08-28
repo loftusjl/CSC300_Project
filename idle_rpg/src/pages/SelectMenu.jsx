@@ -40,7 +40,7 @@ export function SelectMenu(props) {
 						<div className='control-row'>
 							<button className='rpgui-button' onClick={() => setCharacterName('')}><p>Reset</p></button>
 							<Button className='rpgui-button' to='/Travel'
-							><p>Adventure!</p></Button>
+							><p>Start</p></Button>
 
 						</div>
 					</div>
