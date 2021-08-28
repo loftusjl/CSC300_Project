@@ -24,6 +24,11 @@ public:
     int getBaseDefenseBonus() const;
     void setBaseDefenseBonus(int);
     void displayStats();
+    void updateHealth(int);
+
+    int attackTotal();
+    int defenseTotal();
+    int evasionTotal();
 
 private:
     int health;

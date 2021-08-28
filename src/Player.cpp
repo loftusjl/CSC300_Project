@@ -54,25 +54,35 @@ void Player::displayStats()
 }
 void Player::initClassStats(char classID)
 {
+    const int max = 18;
     switch(toupper(classID))
     {
     case 'M':
-        this->setHitPoints(18*.40);
-        this->setStrength(18*.25);
-        this->setIntelligence(18*.65);
-        this->setDexterity(18*.20);
+        this->setHitPoints(max * .25);
+        this->setStrength(max * .25);
+        this->setIntelligence(max * .75);
+        this->setDexterity(max * .50);
+        this->setBaseAttackBonus(max * .25);
+        this->setBaseDefenseBonus(max * .75);
+        this->setBaseEvasion(max * .75);
         break;
     case 'W':
-        this->setHitPoints(18*.65);
-        this->setStrength(18*.55);
-        this->setIntelligence(18*.25);
-        this->setDexterity(18*.35);
+        this->setHitPoints(max * .75);
+        this->setStrength(max * .50);
+        this->setIntelligence(max * .25);
+        this->setDexterity(max * .50);
+        this->setBaseAttackBonus(max * .50);
+        this->setBaseDefenseBonus(max * .50);
+        this->setBaseEvasion(max * .25);
         break;
     case 'S':
-        this->setHitPoints(18*.45);
-        this->setStrength(18*.30);
-        this->setIntelligence(18*.50);
-        this->setDexterity(18*.65);
+        this->setHitPoints(max * .50);
+        this->setStrength(max * .25);
+        this->setIntelligence(max * .75);
+        this->setDexterity(max *.75);
+        this->setBaseAttackBonus(max * .75);
+        this->setBaseDefenseBonus(max * .75);
+        this->setBaseEvasion(max * .75);
         break;
     default:
         cout<<"\nError: No class selected.\n";

@@ -20,5 +20,6 @@ public:
 	void setLowNum(int);
 	void setHighNum(int);
 	int RandResult();
+
 };
 #endif

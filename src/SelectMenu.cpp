@@ -63,7 +63,6 @@ void SelectMenu::setSelection(char userChoice) //Sets the user selection for the
 	switch(userChoice)
 	{
 	case 'N':
-		cout<<"New game"<<endl;
 		GameController::setPlayerCharacter(CreateNewCharacter());
 		GameMenu();
 		setGameMenu(GameController::getSelection());

@@ -9,8 +9,8 @@ using namespace std;
 class CombatScreen
 {
 private:
-    Player theOpposer;
-    Enemy theOpponent;
+    static Player player;
+    static Enemy enemy;
 public:
 	CombatScreen();
 	~CombatScreen() {}
@@ -27,10 +27,13 @@ public:
     Enemy getOpponent();
     void setOpponent(Enemy);
 
-	bool Attack(int,int) const;
-	bool Flee(int,int) const;
-	void CastSpell(string);
+	bool Attack(int,int);
+	bool Flee(int,int);
+	void CastSpell();
     void welcomeMsg();
+
+    void displayVSscreen();
+    void attackStatsDisplay();
 
 };
 #endif

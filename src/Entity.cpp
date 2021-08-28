@@ -85,3 +85,20 @@ void Entity::displayStats()
     <<"\nBase Defense Bonus: "<<getBaseDefenseBonus()
     <<"\nBase Evasion: "<<getBaseEvasion()<<endl;
 }
+void Entity::updateHealth(int healthDamage)
+{
+    this->health -= healthDamage;
+}
+
+int Entity::attackTotal()
+{
+    return hitPoints + baseAttackBonus + strength;
+}
+int Entity::defenseTotal()
+{
+    return intelligence + strength + baseDefenseBonus;
+}
+int Entity::evasionTotal()
+{
+    return intelligence + dexterity + baseEvasion;
+}
