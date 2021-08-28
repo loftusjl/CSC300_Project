@@ -23,7 +23,6 @@ export const SiteContext = createContext({
 	setCharacterName: () => { },
 	setEncounterAction: () => { },
 	setEncounterLocation: () => { },
-	setEncounterLocation: () => { },
 	setEnemyAttackBonus: () => { },
 	setEnemyDefenseBonus: () => { },
 	setEnemyEvasionBonus: () => { },

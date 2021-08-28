@@ -22,7 +22,12 @@ export function SelectMenu(props) {
 				><p>Create New Character</p></Button>
 				<Button color='golden' disabled><p>Item Shop</p></Button>
 				<Button color='golden' disabled><p>Settings</p></Button>
-				<Button><p>Exit Game</p></Button>
+				<Button
+					onClick={(e) => {
+						e.preventDefault();
+						window.alert(`Exit game is not a feature that works unless we scripted you opening the tab. Just close your browser.`);
+					}}
+				><p>Exit Game</p></Button>
 			</div>
 			<div className='select-menu'>
 				{!createCharacter && (

@@ -7,7 +7,13 @@ import { slime } from '../dialogues/slime'
 import { dialogue } from '../util/randGen';
 
 export const CombatScreen = (props) => {
-	const { setEnemyName, encounterAction, encounterLocation, setEncounterLocation, setEncounterAction } = useContext(SiteContext);
+	const {
+		encounterAction,
+		encounterLocation,
+		setEncounterAction,
+		setEncounterLocation,
+		setEnemyName,
+	} = useContext(SiteContext);
 	const history = useHistory();
 
 	useEffect(() => {
