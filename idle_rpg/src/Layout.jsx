@@ -7,19 +7,20 @@ const Layout = (props) => {
 	const [characterAttackBonus, setCharacterAttackBonus] = useState(0);
 	const [characterDefenseBonus, setCharacterDefenseBonus] = useState(0);
 	const [characterEvasionBonus, setCharacterEvasionBonus] = useState(0);
-	const [characterHP, setCharacterHP] = useState(0);
-	const [characterMaxHP, setCharacterMaxHP] = useState(0);
+	const [characterHP, setCharacterHP] = useState(100);
+	const [characterMaxHP, setCharacterMaxHP] = useState(100);
 	const [characterName, setCharacterName] = useState('');
 	const [encounterAction, setEncounterAction] = useState('');
 	const [encounterLocation, setEncounterLocation] = useState('');
 	const [enemyAttackBonus, setEnemyAttackBonus] = useState(0);
 	const [enemyDefenseBonus, setEnemyDefenseBonus] = useState(0);
 	const [enemyEvasionBonus, setEnemyEvasionBonus] = useState(0);
-	const [enemyHP, setEnemyHP] = useState(0);
-	const [enemyMaxHP, setEnemyMaxHP] = useState(0);
+	const [enemyHP, setEnemyHP] = useState(100);
+	const [enemyMaxHP, setEnemyMaxHP] = useState(100);
 	const [enemyName, setEnemyName] = useState('');
 	const [toggleAutopilot, setToggleAutopilot] = useState(false);
-
+	const [victory, setVictory] = useState(false);
+	const [defeat, setDefeat] = useState(false);
 	return (
 		<SiteContext.Provider value={{
 			characterAttackBonus,
@@ -28,6 +29,7 @@ const Layout = (props) => {
 			characterHP,
 			characterMaxHP,
 			characterName,
+			defeat,
 			encounterAction,
 			encounterLocation,
 			enemyAttackBonus,
@@ -36,12 +38,15 @@ const Layout = (props) => {
 			enemyHP,
 			enemyMaxHP,
 			enemyName,
+			victory,
+			toggleAutopilot,
 			setCharacterAttackBonus,
 			setCharacterDefenseBonus,
 			setCharacterEvasionBonus,
 			setCharacterHP,
 			setCharacterMaxHP,
 			setCharacterName,
+			setDefeat,
 			setEncounterAction,
 			setEncounterLocation,
 			setEnemyAttackBonus,
@@ -51,7 +56,7 @@ const Layout = (props) => {
 			setEnemyMaxHP,
 			setEnemyName,
 			setToggleAutopilot,
-			toggleAutopilot,
+			setVictory,
 		}}>
 			<div className="rpgui-content">
 				<div className='inner rpgui-container framed'>

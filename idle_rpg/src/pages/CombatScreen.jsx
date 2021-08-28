@@ -8,11 +8,19 @@ import { dialogue } from '../util/randGen';
 
 export const CombatScreen = (props) => {
 	const {
+		characterHP,
+		defeat,
 		encounterAction,
 		encounterLocation,
+		enemyHP,
+		victory,
+		setCharacterHP,
+		setDefeat,
 		setEncounterAction,
 		setEncounterLocation,
+		setEnemyHP,
 		setEnemyName,
+		setVictory,
 	} = useContext(SiteContext);
 	const history = useHistory();
 
@@ -25,14 +33,35 @@ But wait.`
 		);
 		setEncounterAction(slime.appears);
 	}, [])
+
+	// Victory effects
+	useEffect(() => {
+		if (enemyHP <= 0) {
+			setVictory(true);
+			setEncounterAction(dialogue(slime.victory))
+		}
+	}, [enemyHP])
+
+	// Defeat effects
+	useEffect(() => {
+		if (characterHP <= 0) {
+			setDefeat(true)
+			setEncounterAction(dialogue(slime.defeated))
+		}
+	})
+
 	return (
 		<div className='travel-screen-wrapper rpgui-container framed-golden'>
 			<div className='controls'>
-				<Button onClick={(e) => {
+				<Button disabled={enemyHP <= 0} onClick={(e) => {
 					e.preventDefault();
-					setEncounterAction(dialogue(slime.attacked))
+					setEnemyHP(enemyHP - 50)
+					{ (enemyHP > 0) && setEncounterAction(dialogue(slime.attacked)) }
 					setTimeout(() => {
-						setEncounterAction(dialogue(slime.attacking))
+						if (enemyHP > 0) {
+							setCharacterHP(characterHP - 10);
+							setEncounterAction(dialogue(slime.attacking))
+						}
 					}, 3000);
 				}}><p>Attack</p></Button>
 				<Button disabled><p>Spell</p></Button>

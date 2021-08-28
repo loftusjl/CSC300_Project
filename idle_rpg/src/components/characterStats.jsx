@@ -9,8 +9,8 @@ export const CharacterStats = (props) => {
 			<h3>{characterName}</h3>
 			<StatBlock
 				label='Hit Points'
-				decimalValue={characterMaxHP / characterHP}
-				percentValue={`${(characterMaxHP / characterHP) * 100}%`}
+				decimalValue={characterHP / characterMaxHP}
+				percentValue={`${(characterHP / characterMaxHP) * 100}%`}
 				color='red'
 			/>
 			<StatBlock
