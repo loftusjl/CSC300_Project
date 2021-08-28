@@ -46,9 +46,20 @@ body {
 			}
 		}
 
-		.character-stat{
-			// display: flex;
-			// flex-direction: column;
+		.status-block {
+			display: flex;
+			justify-content: space-between;
+			gap:25px;
+		}
+		.stats{
+			display: flex;
+			flex:1;
+			flex-direction: column;
+			position: inherit;
+		}
+
+		.stat-block {
+			flex:1;
 		}
 		.control-row{
 			display: flex;

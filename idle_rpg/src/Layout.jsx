@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { SiteContext } from './context/SiteContext';
 import { CharacterStats } from './components/characterStats'
+import { EnemyStats } from './components/enemyStats';
 
 const Layout = (props) => {
 	const [characterName, setCharacterName] = useState('');
@@ -14,7 +15,10 @@ const Layout = (props) => {
 						<h3>The text-based RPG of the future is now!</h3>
 					</div>
 					<div className='wrapper'>{props.children}</div>
-					<CharacterStats />
+					<div className='status-block'>
+						{characterName && <CharacterStats />}
+						{characterName && <EnemyStats />}
+					</div>
 				</div>
 			</div>
 		</SiteContext.Provider>
